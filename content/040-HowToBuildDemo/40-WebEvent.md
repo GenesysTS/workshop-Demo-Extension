@@ -5,8 +5,6 @@ weight: 40
 ---
 
 
-## How to record a Predictive Engagement 'Web Event'
-
 To record a Web Event, we need to send a 'record' event with the desired event name and attributes. 
 
 - Choose an element, for instance the 'Add to Cart' button of the website
@@ -19,3 +17,4 @@ To record a Web Event, we need to send a 'record' event with the desired event n
 
 ## [Video: Demo Extension Dev Mode 4 Web Event](https://youtu.be/FktZ5aOXHQI)
 
+{{< youtube id="FktZ5aOXHQI" title="Demo Extension Dev Mode 4 Web Event" >}}

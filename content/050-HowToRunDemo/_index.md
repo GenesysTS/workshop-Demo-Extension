@@ -4,7 +4,7 @@ chapter: true
 weight: 50
 ---
 
-## How to run a demo?
+![Title](/images/Run.PNG)
 
 
 To run a demo navigate to the target web site, and go into "Demo Execution" mode by enabling the "Injection" and disabling the "Inspection". 
@@ -15,6 +15,4 @@ HotSpots will not be highlighted like when 'Inspection' mode is enabled, but the
 - When you mouse over a HotSpot, the extension icon will show an abbreviation of the action that would fire if you would click on the 'mouse-overed' element. This is very useful to remind you where to click next in your demo.
 
 
-## [Video: Demo Extension Execution Mode](https://youtu.be/M0Fov05ZdWU)
-
-
+{{< youtube id="M0Fov05ZdWU" title="Demo Extension Execution Mode" >}}
