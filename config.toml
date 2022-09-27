@@ -51,31 +51,31 @@ defaultContentLanguage = "en"
 # Force to have /en/my-page and /fr/my-page routes, even for default language.
 defaultContentLanguageInSubdir= true
 
-[Languages]
-[Languages.en]
-title = "Documentation for Hugo Learn Theme"
-weight = 1
-languageName = "English"
+#[Languages]
+#[Languages.en]
+#title = "Documentation for Hugo Learn Theme"
+#weight = 1
+#languageName = "English"
 
-[Languages.fr]
-title = "Documentation du thème Hugo Learn"
-weight = 2
-languageName = "Français"
+#[Languages.fr]
+#title = "Documentation du thème Hugo Learn"
+#weight = 2
+#languageName = "Français"
 
-[[menu.shortcuts]] 
-name = "<i class='fas fa-graduation-cap'></i> Genesys Workshops"
-url = "https://workshop.genesys.com/"
-weight = 10
+#[[menu.shortcuts]] 
+#name = "<i class='fas fa-graduation-cap'></i> Genesys Workshops"
+#url = "https://workshop.genesys.com/"
+#weight = 10
 
-[[menu.shortcuts]]
-name = "<i class='fas fa-tools'></i> GDemo Portal"
-url = "https://gdemo.demo.genesys.com/"
-weight = 11
+#[[menu.shortcuts]]
+#name = "<i class='fas fa-tools'></i> GDemo Portal"
+#url = "https://gdemo.demo.genesys.com/"
+#weight = 11
 
-[[menu.shortcuts]]
-name = "<i class='far fa-lightbulb'></i> Genesys Developer Center"
-url = "https://developer.genesys.com/"
-weight = 20
+#[[menu.shortcuts]]
+#name = "<i class='far fa-lightbulb'></i> Genesys Developer Center"
+#url = "https://developer.genesys.com/"
+#weight = 20
 
 [markup]
   [markup.goldmark]
