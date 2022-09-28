@@ -26,7 +26,7 @@ jobs:
 
       - name: Remove padding in chapter
         run: |
-          grep -qxF ' #chapter {padding: 0 0 4rem 0;}' static/css/theme-mine.css || echo '
+          grep -qxF '#chapter {padding: 0 0 4rem 0;}' static/css/theme-mine.css || echo '
           
           #chapter {padding: 0 0 4rem 0;}' >> static/css/theme-mine.css
       
