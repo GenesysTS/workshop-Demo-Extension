@@ -30,6 +30,10 @@ body {
     color: var(--MAIN-TEXT-color) !important;
 }
 
+#body .padding {
+    padding: 0rem 0rem;
+}
+
 #chapter {
     padding: 0 0 4rem 0;
 }
@@ -156,5 +160,3 @@ div.notices p:first-child:before {
 #chapter p, #chapter h3 {
     text-align: left;
 }
-
-#body .padding {padding: 0rem 0rem;}
