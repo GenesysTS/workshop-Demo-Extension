@@ -1,0 +1,61 @@
+name: Update Hugo Template for GTS
+on: 
+  push:
+    branches:
+      - main  # Set a branch to deploy
+  pull_request:
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      
+      - name: Make body font color black
+        uses: jacobtomlinson/gha-find-replace@2.0.0
+        with:
+          find: "--MAIN-TEXT-color:#323235;"
+          replace: "--MAIN-TEXT-color:#000000;"
+          include: "static/css/theme-mine.css"
+          regex: false
+
+      - name: Remove padding in body
+        run: |
+          grep -qxF '#body .padding {padding: 0rem 0rem;}' static/css/theme-mine.css || echo '
+          
+          #body .padding {padding: 0rem 0rem;}' >> static/css/theme-mine.css
+
+      - name: Remove padding in chapter
+        run: |
+          grep -qxF ' #chapter {padding: 0 0 4rem 0;}' static/css/theme-mine.css || echo '
+          
+          #chapter {padding: 0 0 4rem 0;}' >> static/css/theme-mine.css
+      
+      - name: Remove Menu shortcuts
+        uses: jacobtomlinson/gha-find-replace@2.0.0
+        with:
+          find: "(?m)(\\[\\[menu\\.shortcuts\\]\\](.*\n)+?)(^weight = .*)"
+          replace: " "
+          include: "config.toml"
+          regex: true
+
+      - name: Remove Languages shortcuts
+        uses: jacobtomlinson/gha-find-replace@2.0.0
+        with:
+          find: "(?m)(\\[Languages(.*\n)+?)(^languageName = .*)"
+          replace: " "
+          include: "config.toml"
+          regex: true
+
+      - name: Add popups to links
+        uses: jacobtomlinson/gha-find-replace@2.0.0
+        with:
+          find: "(href=\"https:([^\"]+?\"))(>.*)"
+          replace: "$1 target=\"_blank\"$3"
+          include: "layouts/partials/menu-footer.html"
+          regex: true
+
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          message: GHA Auto-Update Template for GTS
