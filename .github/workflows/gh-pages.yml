@@ -1,16 +1,16 @@
-name: Build and Deploy to GCP
-# Authentication GCP - see here
-# https://cloud.google.com/blog/products/identity-security/enabling-keyless-authentication-from-github-actions
+name: Build and Deploy to Azure
 
-on:
+on: 
   push:
     branches:
       - main  # Set a branch to deploy
   pull_request:
-
+  workflow_dispatch:
 jobs:
+  template:
+    uses: GenesysTS/GTS-Reusable-Github-Actions/.github/workflows/transform-hugo-template-to-gdemo.yml@main
   deploy:
-    # if: github.repository_owner == 'genesys-samples'
+    if: github.repository_owner == 'GenesysTS'
     runs-on: ubuntu-20.04
     concurrency:
       group: ${{ github.workflow }}-${{ github.ref }}
@@ -29,18 +29,14 @@ jobs:
       - name: Build
         run: hugo
 
-      - name: Show Environment
-        run: ls -al
-
-      - id: 'auth'
-        uses: 'google-github-actions/auth@v0'
+      - name: Login via AZ module
+        uses: azure/login@v1
         with:
-          credentials_json: ${{ secrets.gcp_credentials }}
-
-      - name: Upload files
-        id: 'upload-files'
-        uses: 'google-github-actions/upload-cloud-storage@v0'
+          creds: ${{secrets.GENESYS_SAMPLES_SP}}
+          
+      - name: Upload Hugo to Azure Blob
+        uses: azure/CLI@v1
         with:
-          path: './public'
-          parent: false
-          destination: 'gdemo-workshops-test/genesys-cloud-demo-extension-test'
+          inlineScript: |
+            az storage blob delete-batch --account-name 'genesyssamples' --source '$web' --pattern 'workshops-gdemo/${{ github.event.repository.name }}/*'
+            az storage blob upload-batch --account-name 'genesyssamples' --source ./public --destination '$web/workshops-gdemo/${{ github.event.repository.name }}'

@@ -1,7 +1,7 @@
 
 :root{
 
-    --MAIN-TEXT-color: #101011; /* Color of text by default */
+    --MAIN-TEXT-color: #000000; /* Color of text by default */
     --MAIN-TITLES-TEXT-color: #FF4F1F; /* Color of titles h2-h3-h4-h5 */
     --MAIN-LINK-color:#3B90AA; /* Color of links */
     --MAIN-LINK-HOVER-color:#419BB2; /* Color of hovered links */
@@ -28,14 +28,6 @@
 
 body {
     color: var(--MAIN-TEXT-color) !important;
-}
-
-#body .padding {
-    padding: 0rem 0rem;
-}
-
-#chapter {
-    padding: 0 0 4rem 0;
 }
 
 textarea:focus, input[type="email"]:focus, input[type="number"]:focus, input[type="password"]:focus, input[type="search"]:focus, input[type="tel"]:focus, input[type="text"]:focus, input[type="url"]:focus, input[type="color"]:focus, input[type="date"]:focus, input[type="datetime"]:focus, input[type="datetime-local"]:focus, input[type="month"]:focus, input[type="time"]:focus, input[type="week"]:focus, select[multiple=multiple]:focus {
@@ -160,3 +152,8 @@ div.notices p:first-child:before {
 #chapter p, #chapter h3 {
     text-align: left;
 }
+
+
+#body .padding {padding: 0rem 0rem;}
+   
+#chapter {padding: 0 0 4rem 0;}
