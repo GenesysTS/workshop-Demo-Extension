@@ -43,4 +43,4 @@ jobs:
         with:
           path: './public'
           parent: false
-          destination: 'gdemo-workshops-test/genesys-cloud-demo-extension'
+          destination: 'gdemo-workshops-test/genesys-cloud-demo-extension-test'
