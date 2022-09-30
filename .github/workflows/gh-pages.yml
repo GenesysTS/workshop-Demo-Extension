@@ -10,6 +10,7 @@ jobs:
   template:
     uses: GenesysTS/GTS-Reusable-Github-Actions/.github/workflows/transform-hugo-template-to-gdemo.yml@main
   deploy:
+    needs: template
     if: github.repository_owner == 'GenesysTS'
     runs-on: ubuntu-20.04
     concurrency:
