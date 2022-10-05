@@ -19,5 +19,6 @@ var sendMessage = function (msg) {
 
 bindEvent(window, "load", function (e) {
   console.log("iframe sending path: " + window.location.pathname);
-  sendMessage(window.location.pathname);
+  sendMessage({origin: "gdemo_analytics", event_type: "pageview", event_value: window.location.href});
 });
+
