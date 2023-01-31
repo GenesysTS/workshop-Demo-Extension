@@ -9,7 +9,7 @@ weight: 60
 
 Note: This feature is only applicable if you are using PureCloudNow Org.
 
-By sending a special 'engage_now' event to PCN, an Action Map will trigger that will trigger a chat invite.
+By sending a special 'engage_now' event to PCN, an Action Map will trigger a chat invite.
 
 - Choose an element of the website
 - Right-click on this element

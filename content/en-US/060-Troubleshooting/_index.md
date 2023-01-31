@@ -9,7 +9,7 @@ weight: 60
 
 ### Overcome CSP issues
 Some websites include CSP (Content Security Policy) directives that block the loading of external components, like the Demo Extension.
-This translate into Chrome console with error messages like:
+This translates into Chrome console with error messages like:
 "Refused to connect to 'https://api.mypurecloud.com/api/v2/webchat/guest/conversations' because it violates the following Content Security Policy directive:..." 
 
 To workaround this issue, you can install the ["Always Disable Content-Security-Policy" Extension from Chrome store](https://chrome.google.com/webstore/detail/always-disable-content-se/ffelghdomoehpceihalcnbmnodohkibj).
